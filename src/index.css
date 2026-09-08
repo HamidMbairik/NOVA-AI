@@ -1,0 +1,137 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand color tokens */
+  --color-background: #08090d;
+  --color-surface: #11131a;
+  --color-elevated: #181b24;
+  --color-primary: #7c3aed;
+  --color-secondary: #4f46e5;
+  --color-accent: #22d3ee;
+  --color-accent-soft: #a78bfa;
+  --color-text: #f8fafc;
+  --color-muted: #9ca3af;
+
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand gradient */
+  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #22d3ee 100%);
+
+  /* Motion */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-text font-sans;
+    background-image: radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(124, 58, 237, 0.12),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 90% 10%,
+        rgba(34, 211, 238, 0.06),
+        transparent
+      );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-display;
+  }
+
+  /* Visible focus states */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgba(124, 58, 237, 0.4);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #7c3aed 0%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: rgba(17, 19, 26, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(248, 250, 252, 0.08);
+  }
+
+  .surface {
+    @apply bg-surface border border-white/8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: #262b36;
+  border-radius: 8px;
+  border: 2px solid var(--color-background);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #323947;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .marquee-track {
+    animation: marquee-scroll linear infinite;
+  }
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
