@@ -2,6 +2,8 @@
 
 A front-end demo of an AI customer-support SaaS. Landing page, real-looking live demo, and a full dashboard — all mocked up, no backend.
 
+**Live demo:** [https://novaai-virid.vercel.app/](https://novaai-virid.vercel.app/)
+
 I built this to practice putting together a polished, complete product surface: a marketing site that sells the product, and a dashboard that shows what using it would actually feel like (conversations, agents, analytics, billing, team, knowledge base). The data is all fake, the "AI" is scripted, but the UI is real.
 
 ## Screenshots
