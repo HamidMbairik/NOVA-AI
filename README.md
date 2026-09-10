@@ -119,3 +119,7 @@ scripts/
 - This is purely a front-end exercise. No server, no auth, no persistence — conversations, invoices, and tickets reset on refresh.
 - Customer photos come from [randomuser.me](https://randomuser.me) and load at runtime, so the nice avatars need internet.
 - The "AI" in the demo is a canned response loop. The real trick is that it never quite feels canned.
+
+---
+
+**Built from scratch by [Hamid Mbairik](https://github.com/HamidMbairik) · [CorgaDev](https://corgadev.vercel.app) — custom websites, no templates.**
